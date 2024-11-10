@@ -23,7 +23,7 @@
                 <input type="password" id="password" placeholder="Password" class="nice-input">
                 <button onclick="login()" class="nice-button nice-button-primary">Login</button>
             </div>
-            <p>Don't have an account? <a href="file:///C:/Users/Computer/public/app.html">Sign up here</a></p>
+            <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
         </section>
     </div>
 
@@ -40,7 +40,7 @@
             // Check if credentials match
             if (enteredEmail === storedEmail && enteredPassword === storedPassword) {
                 // Redirect to index.html on successful login
-                window.location.href = 'file:///C:/Users/Computer/public/app.html';
+                window.location.href = 'app.html';
             } else {
                 alert('Invalid email or password. Please try again.');
             }
