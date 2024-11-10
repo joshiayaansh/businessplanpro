@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section {
+    margin: 20px 0;
+}
+
+.nice-card {
+    padding: 20px;
+    background-color: #222;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nice-card h2 {
+    margin-bottom: 20px;
+}
+
+.nice-input, .nice-button, select {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.nice-input:focus, select:focus {
+    outline: none;
+    border-color: #4caf50;
+}
+
+.nice-button {
+    background-color: #4caf50;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.nice-button:hover {
+    background-color: #45a049;
+}
+
+.nice-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#task-list li, #investor-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #444;
+    border-radius: 5px;
+    position: relative;
+}
+
+#calendar-items li {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #555;
+    border-radius: 5px;
+}
+
+.progress-bar-container {
+    position: relative;
+    background-color: #666;
+    height: 30px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #4caf50;
+    width: 0;
+    border-radius: 5px;
+    transition: width 1s ease-in-out;
+}
+
+.progress-text {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    line-height: 30px;
+}
+
+.calendar-item-box {
+    border: 2px solid #4caf50;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+select {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+select option {
+    background-color: #333;
+    color: white;
+}
+
+/* Style for the dropdown next to each task */
+.task-status-dropdown, .investor-status-dropdown {
+    margin-left: 20px;
+    font-family: 'Poppins', sans-serif;
+    background-color: #333;
+    color: white;
+    border: 1px solid #444;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* Style for the investor tracker */
+.investor-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #444;
+    border-radius: 5px;
+    position: relative;
+}
+
+.offer-container {
+    display: flex;
+    align-items: center;
+}
+
+.offer-amount {
+    font-weight: bold;
+    color: #4caf50;
+    margin-right: 10px;
+}
+
+#investor-list li {
+    background-color: #444;
+}
+
+#investor-list li .investor-name {
+    font-weight: bold;
+    color: #fff;
+}
+
+.investor-status-dropdown {
+    background-color: #333;
+    color: white;
+    border: 1px solid #444;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* Deal Not Closed - Red */
+.investor-item[data-status="Deal Not Closed"] {
+    background-color: #f44336; /* Red for Not Closed */
+}
+
+/* Deal Closed - Green */
+.investor-item[data-status="Deal Closed"] {
+    background-color: #4caf50; /* Green for Closed */
+}
+
+/* Style for social media share buttons */
+.social-share {
+    margin-top: 10px;
+}
+
+.social-share a {
+    text-decoration: none;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: #4caf50;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.social-share a:hover {
+    background-color: #45a049;
+}
+
+/* Style for company name */
+.company-name {
+    font-weight: bold;
+    color: #4caf50; /* Green to highlight the company */
+    margin-top: 10px;
+}

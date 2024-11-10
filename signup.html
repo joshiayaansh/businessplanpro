@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Business PlanPro</title>
+    <link href="https://cdn.jsdelivr.net/npm/niceui@1.0.3/dist/niceui.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="icon.png">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Sign Up</h1>
+        </header>
+
+        <section class="nice-card">
+            <h2>Create an Account</h2>
+            <div class="nice-input-group">
+                <input type="text" id="name" placeholder="Your Name" class="nice-input">
+                <input type="email" id="email" placeholder="Email Address" class="nice-input">
+                <input type="password" id="password" placeholder="Password" class="nice-input">
+                <input type="text" id="business-name" placeholder="Business Name" class="nice-input">
+                <button onclick="signup()" class="nice-button nice-button-primary">Sign Up</button>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function signup() {
+            // Collect values from input fields
+            let name = document.getElementById('name').value.trim();
+            let email = document.getElementById('email').value.trim();
+            let password = document.getElementById('password').value.trim();
+            let businessName = document.getElementById('business-name').value.trim();
+
+            // Store the values in localStorage
+            if (name && email && password && businessName) {
+                localStorage.setItem('userName', name);
+                localStorage.setItem('businessName', businessName);
+                localStorage.setItem('userEmail', email);        // Store email
+                localStorage.setItem('userPassword', password);  // Store password
+                // Redirect to the index page after signup
+                window.location.href = 'file:///C:/Users/Computer/public/app.html';
+            } else {
+                alert('Please fill out all fields!');
+            }
+        }
+    </script>
+
+</body>
+</html>

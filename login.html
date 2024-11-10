@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Business PlanPro</title>
+    <link href="https://cdn.jsdelivr.net/npm/niceui@1.0.3/dist/niceui.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="icon.png">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Login</h1>
+        </header>
+
+        <section class="nice-card">
+            <h2>Access Your Account</h2>
+            <div class="nice-input-group">
+                <input type="text" id="email" placeholder="Email Address" class="nice-input">
+                <input type="password" id="password" placeholder="Password" class="nice-input">
+                <button onclick="login()" class="nice-button nice-button-primary">Login</button>
+            </div>
+            <p>Don't have an account? <a href="file:///C:/Users/Computer/public/app.html">Sign up here</a></p>
+        </section>
+    </div>
+
+    <script>
+        function login() {
+            // Get stored credentials from localStorage
+            const storedEmail = localStorage.getItem('userEmail');
+            const storedPassword = localStorage.getItem('userPassword');
+
+            // Get entered credentials from the input fields
+            const enteredEmail = document.getElementById('email').value.trim();
+            const enteredPassword = document.getElementById('password').value.trim();
+
+            // Check if credentials match
+            if (enteredEmail === storedEmail && enteredPassword === storedPassword) {
+                // Redirect to index.html on successful login
+                window.location.href = 'file:///C:/Users/Computer/public/app.html';
+            } else {
+                alert('Invalid email or password. Please try again.');
+            }
+        }
+    </script>
+
+</body>
+</html>

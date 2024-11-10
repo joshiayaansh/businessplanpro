@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Planner</title>
+    <link href="https://cdn.jsdelivr.net/npm/niceui@1.0.3/dist/niceui.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="icon.png">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Business Planner</h1>
+            <!-- Personalized welcome message -->
+            <div id="welcome-message"></div>
+        </header>
+
+        <!-- Task Section -->
+        <section id="task-section" class="nice-card">
+            <h2>Create Tasks with Progress</h2>
+            <div class="nice-input-group">
+                <input type="text" id="task-input" placeholder="Enter task" class="nice-input">
+                <input type="number" id="task-progress" placeholder="Progress (0-100)" class="nice-input">
+                <button onclick="addTask()" class="nice-button nice-button-primary">Add Task</button>
+            </div>
+            <ul id="task-list" class="nice-list"></ul>
+        </section>
+
+        <!-- Investor Tracker Section -->
+        <section id="investor-section" class="nice-card">
+            <h2>Investor Tracker</h2>
+            <div class="nice-input-group">
+                <input type="text" id="investor-name" placeholder="Investor Name" class="nice-input">
+                <input type="number" id="investor-offer" placeholder="Offer Amount" class="nice-input">
+                <button onclick="addInvestor()" class="nice-button nice-button-primary">Add Investor</button>
+            </div>
+            <ul id="investor-list" class="nice-list"></ul>
+        </section>
+
+        <!-- Calendar Section -->
+        <section id="calendar-section" class="nice-card">
+            <h2>My Calendar</h2>
+            <div class="nice-input-group">
+                <input type="date" id="calendar-date" class="nice-input">
+                <input type="text" id="calendar-label" placeholder="Label" class="nice-input">
+                <button onclick="addCalendarItem()" class="nice-button nice-button-primary">Add Calendar Item</button>
+            </div>
+            <ul id="calendar-items" class="nice-list"></ul>
+        </section>
+
+        <!-- Job Posting Section -->
+        <section id="job-posting-section" class="nice-card">
+            <h2>Post a Job Listing</h2>
+            <div class="nice-input-group">
+                <input type="text" id="job-title" placeholder="Job Title" class="nice-input">
+                <textarea id="job-description" placeholder="Job Description" class="nice-input" rows="4"></textarea>
+                <input type="text" id="job-location" placeholder="Location" class="nice-input">
+                <input type="number" id="job-salary" placeholder="Salary (in USD)" class="nice-input">
+                <input type="text" id="company" placeholder="Company Name" class="nice-input">
+                <button onclick="postJob()" class="nice-button nice-button-primary">Post Job</button>
+            </div>
+            <ul id="job-listings" class="nice-list"></ul>
+        </section>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/niceui@1.0.3/dist/niceui.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Retrieve user data from localStorage and display welcome message
+        window.onload = function() {
+            const userName = localStorage.getItem('userName');
+            const businessName = localStorage.getItem('businessName');
+
+            if (userName && businessName) {
+                const welcomeMessage = `Welcome, ${userName}. Here are the stats for ${businessName}!`;
+                document.getElementById('welcome-message').innerText = welcomeMessage;
+            } else {
+                document.getElementById('welcome-message').innerText = "Welcome! Please sign up.";
+            }
+        };
+    </script>
+</body>
+</html>
