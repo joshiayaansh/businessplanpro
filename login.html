@@ -28,21 +28,23 @@
     </div>
 
     <script>
-       function login() {
-    const email = document.getElementById('email').value.trim();
-    const password = document.getElementById('password').value.trim();
+        function login() {
+            // Get stored credentials from localStorage
+            const storedEmail = localStorage.getItem('userEmail');
+            const storedPassword = localStorage.getItem('userPassword');
 
-    // Retrieve user data
-    const userData = JSON.parse(localStorage.getItem(email));
+            // Get entered credentials from the input fields
+            const enteredEmail = document.getElementById('email').value.trim();
+            const enteredPassword = document.getElementById('password').value.trim();
 
-    // Check if user exists and password matches
-    if (userData && userData.password === password) {
-        localStorage.setItem('activeUser', email); // Store the current user’s email
-        window.location.href = 'app.html';         // Redirect to main app
-    } else {
-        alert('Invalid email or password.');
-    }
-}  
+            // Check if credentials match
+            if (enteredEmail === storedEmail && enteredPassword === storedPassword) {
+                // Redirect to index.html on successful login
+                window.location.href = 'app.html';
+            } else {
+                alert('Invalid email or password. Please try again.');
+            }
+        }
     </script>
 
 </body>
