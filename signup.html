@@ -30,30 +30,24 @@
 
     <script>
         function signup() {
-    let name = document.getElementById('name').value.trim();
-    let email = document.getElementById('email').value.trim();
-    let password = document.getElementById('password').value.trim();
-    let businessName = document.getElementById('business-name').value.trim();
+            // Collect values from input fields
+            let name = document.getElementById('name').value.trim();
+            let email = document.getElementById('email').value.trim();
+            let password = document.getElementById('password').value.trim();
+            let businessName = document.getElementById('business-name').value.trim();
 
-    if (name && email && password && businessName) {
-        let userData = {
-            name: name,
-            password: password,
-            businessName: businessName,
-            tasks: [],
-            investors: [],
-            calendarItems: []
-        };
-
-        // Save user data with email as the key
-        localStorage.setItem(email, JSON.stringify(userData));
-        alert('Account created successfully!');
-        window.location.href = 'login.html';
-    } else {
-        alert('Please fill out all fields!');
-    }
-}
-
+            // Store the values in localStorage
+            if (name && email && password && businessName) {
+                localStorage.setItem('userName', name);
+                localStorage.setItem('businessName', businessName);
+                localStorage.setItem('userEmail', email);        // Store email
+                localStorage.setItem('userPassword', password);  // Store password
+                // Redirect to the index page after signup
+                window.location.href = 'app.html';
+            } else {
+                alert('Please fill out all fields!');
+            }
+        }
     </script>
 
 </body>
